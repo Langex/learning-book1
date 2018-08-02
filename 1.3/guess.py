@@ -10,8 +10,7 @@ number = random.randint(1, 20)
 print('Well, ' + myName + ', I am thinking of a number between 1 and 20.')
 
 for guessesTaken in range(6):
-    print('used drink: ')
-    print(+ guessesTaken)
+    print('used attempts: ' + str(guessesTaken))
     print('Take a guess.')
     guess = input()
     guess = int(guess)
@@ -29,6 +28,8 @@ if guess == number:
     guessesTaken = str(guessesTaken + 1)
     print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!')
 
+    print('m')
+
 if guess != number:
-    number = str(number)
-    print('Nope. The number I was thinking of was ' + number + '.')
+        number = str(number)
+        print('Nope. The number I was thinking of was ' + number + '.')
