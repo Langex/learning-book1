@@ -8,6 +8,12 @@ def displayIntro():
 		жадний и голодный дракон, который мигом вас сьест''')
 	print()
 
-	def chooseCave():
-		cave = ''
-		while cave = != '1' and cave != '2':
+def chooseCave():
+	cave = ''
+	while cave = != '1' and cave != '2':
+        print ('В какую пещеру вы войдете? (нажмите клавишу 1 или 2)')
+        cave = input()
+
+    return cave
+
+    
