@@ -16,4 +16,12 @@ def chooseCave():
 
     return cave
 
-    
+    def checkCave(chosenCave):
+        print('Вы приближаетесь к пещере...')
+        time.sleep(2)
+        print('Ее темнота заставляет вас дрожать от страха...')
+        time.sleep(2)
+        print('Большой дракон выпрыгивает перед вами! Он раскрывает свою пасть и...')
+        print()
+        time.sleep(2)
+        
