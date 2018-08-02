@@ -24,4 +24,10 @@ def chooseCave():
         print('Большой дракон выпрыгивает перед вами! Он раскрывает свою пасть и...')
         print()
         time.sleep(2)
-        
+
+        friendlyCave = random.randint(1, 2)
+
+        if chosenCave == str(friendlyCave):
+        	 print('...делиться с вами своими сокровищами!')
+        eles:
+        	 print('...моментально вас сьедает!')
