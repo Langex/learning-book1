@@ -31,3 +31,12 @@ def chooseCave():
         	 print('...делиться с вами своими сокровищами!')
         eles:
         	 print('...моментально вас сьедает!')
+
+playAgain = 'да'
+while playAgain == 'да' or playAgain == 'д':
+    displayIntro()
+    caveNumder = chooseCave()
+    checkCave(caveNumder)
+
+    
+
