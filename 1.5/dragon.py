@@ -38,5 +38,5 @@ while playAgain == 'да' or playAgain == 'д':
     caveNumder = chooseCave()
     checkCave(caveNumder)
 
-    
-
+    print('Попытаете еще раз? (да или нет)')
+    playAgain = input()
