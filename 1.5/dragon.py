@@ -10,13 +10,13 @@ def displayIntro():
 
 def chooseCave():
 	cave = ''
-	while cave = != '1' and cave != '2':
-        print ('В какую пещеру вы войдете? (нажмите клавишу 1 или 2)')
-        cave = input()
+	while cave != '1' and cave != '2':
+		print ('В какую пещеру вы войдете? (нажмите клавишу 1 или 2)')
+		cave = input()
 
-    return cave
+	return cave
 
-    def checkCave(chosenCave):
+def checkCave(chosenCave):
         print('Вы приближаетесь к пещере...')
         time.sleep(2)
         print('Ее темнота заставляет вас дрожать от страха...')
@@ -26,17 +26,19 @@ def chooseCave():
         time.sleep(2)
 
         friendlyCave = random.randint(1, 2)
-
         if chosenCave == str(friendlyCave):
-        	 print('...делиться с вами своими сокровищами!')
-        eles:
-        	 print('...моментально вас сьедает!')
+                print('...делиться с вами своими сокровищами!')
+        else:
+                print('...моментально вас сьедает!')
 
-playAgain = 'да'
-while playAgain == 'да' or playAgain == 'д':
-    displayIntro()
-    caveNumder = chooseCave()
-    checkCave(caveNumder)
+def main():
+        playAgain = 'да'
+        while playAgain == 'да' or playAgain == 'д':
+                displayIntro()
+                caveNumder = chooseCave()
+                checkCave(caveNumder)
 
-    print('Попытаете еще раз? (да или нет)')
-    playAgain = input()
+                print('Попытаете еще раз? (да или нет)')
+                playAgain = input()
+
+main()
