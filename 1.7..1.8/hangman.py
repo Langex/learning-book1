@@ -93,4 +93,13 @@ while True:
 
 
 	guess = getGuess(missedLetters + correctLetters)
-	
+
+	if guess in secretWord:
+		correctLetters = correctLetters + guess
+
+
+		foundAllLetters = True
+		for i in range(len(secretWord)):
+			if secretWord[i] not in correctLetters:
+				foundAllLetters = False
+				break
