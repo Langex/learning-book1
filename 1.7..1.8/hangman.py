@@ -61,17 +61,29 @@ def displayBoard(missedLetters, correctLetters, secretWord):
 		print(letter, end=' ')
 	print()
 
-	def getGuess(alreadyGuessed):
+def getGuess(alreadyGuessed):
 
-		while True:
-			print('Введите букву.')
-			guess = input()
-			guess = guess.lower()
-			if len(guess) != 1:
-				print('Пожалуйста, введите одну букву.')
-			elif guess in alreadyGuessed:
-				print('Вы уже назвали эту букву. Назовите другую.')
-			elif guess not in 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя':
-				print('Пожалуйста, введите БУКВУ.')
-			else:
-				return guess
+	while True:
+		print('Введите букву.')
+		guess = input()
+		guess = guess.lower()
+		if len(guess) != 1:
+			print('Пожалуйста, введите одну букву.')
+		elif guess in alreadyGuessed:
+			print('Вы уже назвали эту букву. Назовите другую.')
+		elif guess not in 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя':
+			print('Пожалуйста, введите БУКВУ.')
+		else:
+			return guess
+
+def playAgain():
+
+	print('Хотите сыграть еще? (да или нет)')
+	return input().lower().startswith('д')
+
+
+print('В И С Е Л И Ц А')
+missedLetters = ''
+correctLetters = ''
+secretWord = getRandomWord(words)
+gameIsDone = False
