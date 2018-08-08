@@ -38,7 +38,7 @@ HANGMAN_PICS = ['''
 words = 'аист акула бабуин баран барсук бобр бык верблюд волк воробей ворон выдра голубь гусь жаба зебра змея индюк кит кобра коза койот корова кошка кролик крыса курица лама ласка лебедь лев лиса лосось лось лягушка медведь моллюск моль мул муравей мышь норка носорог обезьяна овца окунь олен орел осел панда паук питон попугай пума семга скунс собака сова тигр тритон тюлень утка форель хорек черепаха ястреб ящерица'.split()
 
 
-def getRandomWorld(wordList):
+def getRandomWord(wordList):
 	wordIndex = random.randint(0, len(wordList) - 1)
 	return wordList[wordIndex]
 
@@ -108,3 +108,19 @@ while True:
 			gameIsDone = True
 	else:
 		missedLetters = missedLetters + guess
+
+
+		if len(missedLetters) == len(HANGMAN_PICS) -1:
+			displayBoard(missedLetters, correctLetters, secretWord)
+			print('Вы исчерпали все попытки!\nНе угадано букв:'+str(len(missedLetters))+'и угадано букв:'+str(len(correctLetters))+'.Было загадано"'+secretWord+'".')
+			gameIsDone = True
+
+
+		if gameIsDone:
+			if playAgain():
+				missedLetters = ''
+				correctLetters = ''
+				gameIsDone = False
+				secretWord = getRandomWord(words)
+			else:
+				break
