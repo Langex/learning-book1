@@ -58,5 +58,20 @@ def displayBoard(missedLetters, correctLetters, secretWord):
 			blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
 
 	for letter in blanks:
-		print(letter, end=' ')		
-	print()		
+		print(letter, end=' ')
+	print()
+
+	def getGuess(alreadyGuessed):
+
+		while True:
+			print('Введите букву.')
+			guess = input()
+			guess = guess.lower()
+			if len(guess) != 1:
+				print('Пожалуйста, введите одну букву.')
+			elif guess in alreadyGuessed:
+				print('Вы уже назвали эту букву. Назовите другую.')
+			elif guess not in 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя':
+				print('Пожалуйста, введите БУКВУ.')
+			else:
+				return guess
